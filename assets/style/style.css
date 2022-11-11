@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul, ol{
+  list-style: none;
+}
+
+body{
+  background-color: #2a2a2a;
+}
+
+.main-wrapper{
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+h1{
+  text-align: center;
+  padding: 30px ;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.btn{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.lds-ring {
+  position: relative;
+  top: 0;
+  left: 52%;
+  transform: translate(-50%);
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border: 8px solid #cef;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #cef transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

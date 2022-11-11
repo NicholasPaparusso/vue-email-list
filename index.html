@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue-Email-List</title>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.js' integrity='sha512-xjzDqCmpabFznyCZ92vM1F0gg8ExgSukopZQOCcVbObLyJSmZAkaB9wzOCeSClearljJcjRh67cGDp2uv4diLg==' crossorigin='anonymous'></script>
+
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.css' integrity='sha512-tBwPRcI1t+0jTsIMtf//+V1f0xAWHh7pvPE82A2n5FcBrzl6b0LRE6XnxUTRHti59y4Js7z4Wb/zal2HBsVVOQ==' crossorigin='anonymous'/>
+
+  <link rel="stylesheet" href="./assets/style/style.css">
+
+</head>
+<body>
+
+  <div id="app">
+    <div class="main-wrapper">
+      <h1>{{title}}</h1>
+
+      <div @click="this.getApi()" class="btn btn-info text-white my-5">Genera Email</div>
+
+      <div v-if="!isLoaded" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      <table v-else v-show="emails.length === 10 "
+       class="table text-center table-hover table-striped">
+        <thead>
+          <tr>
+            <th class="w-25" scope="col">#Index</th>
+            <th class="w-75" scope="col">Email</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(email, index) in emails">
+            <th scope="row">{{index + 1}}</th>
+            <td>{{email}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
