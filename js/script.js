@@ -5,7 +5,6 @@ createApp({
     return{
 
       title: 'Vue-Email-list',
-      isLoaded: false,
       apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
       emailLimit : 10,
       emails: [],
@@ -15,7 +14,7 @@ createApp({
   methods:{
 
     getApi(){
-      this.isLoaded = false;
+      this.emails = []
       for(i = 0; i < this.emailLimit; i++ ){
 
         axios.get(this.apiUrl)
@@ -25,8 +24,7 @@ createApp({
         })
 
       }
-      this.isLoaded = true;
-      this.emails = []
+
     }
   },
 
