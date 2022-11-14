@@ -23,8 +23,8 @@
 
       <div @click="this.getApi()" class="btn btn-info text-white my-5">Genera Email</div>
 
-      <div v-show="emails.length === 0" class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      <table v-else v-show="emails.length === 10 "
+      <div v-if="isLoading" v-show="emails.length === 0" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      <table  v-show="emails.length === 10 "
        class="table text-center table-hover table-striped">
         <thead>
           <tr>

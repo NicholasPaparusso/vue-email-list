@@ -3,7 +3,7 @@ const {createApp} = Vue;
 createApp({
   data(){
     return{
-
+      isLoading : false,
       title: 'Vue-Email-list',
       apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
       emailLimit : 10,
@@ -14,7 +14,8 @@ createApp({
   methods:{
 
     getApi(){
-      this.emails = []
+      this.emails = [];
+      this.isLoading = true;
       for(i = 0; i < this.emailLimit; i++ ){
 
         axios.get(this.apiUrl)
